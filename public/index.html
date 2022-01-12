@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js" type="module"></script>
+    <style>
+        body{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 97vh;
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            
+        }
+        #message-container{
+            border: 1px solid black;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        #message-container div{
+            background-color: #ccc;
+            padding: 5px;
+        }
+        #message-container div:nth-child(2n){
+            background-color: white;
+        }
+
+        .form-group{
+            display: flex;
+            padding-top: 10px;
+        }
+
+        .form-control{
+            flex:1
+        }
+    </style>
+    <title>socket.io</title>
+</head>
+<body>
+
+<div id="message-container"></div>
+<form id="form">
+    <div class="form-group">
+        <label for="message-input"><strong>Message :</strong></label>
+        <input class="form-control" placeholder="Broadcast your message here ..." type="text" id="message-input">
+        <button type="submit" id="send-button">Send</button><br><br>
+    </div>
+    
+    <div class="form-group">
+        <label for="room-input"><strong>Room : </strong></label>
+        <input class="form-control" placeholder="this feature comming soon ..." type="text" id="room-input"><br><br>
+        <button type="submit" id="room-button">Join</button>
+    </div>
+    
+</form>
+
+</body>
+</html>
